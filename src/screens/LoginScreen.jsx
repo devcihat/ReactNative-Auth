@@ -6,14 +6,16 @@ import Heading from '../components/Heading'
 import Input from '../components/Input'
 import TextButton from '../components/TextButton'
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Heading style={styles.title}>LOGIN</Heading>
       <Error error={''} />
       <Input keyboardType={'email-address'} placeholder={'Email'} style={styles.input} />
       <Input secureTextEntry placeholder={'Password'} style={styles.input} />
-      <FilledButton style={styles.loginButton} onPress={() =>{}} title={'Login'} />
+      <FilledButton style={styles.loginButton} onPress={() =>{
+          navigation.navigate('Registration')
+      }} title={'Login'} />
       <TextButton title={'Have u an account? Create one'} onPress={() => {}} />
     </View>
   )
